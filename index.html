@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slovenia Student Guide – Day 1 to Day 3</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background: #0d47a1;
+    color: white;
+    padding: 12px 20px;
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #1565c0, #1e88e5);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* PROGRESS BAR */
+.progress {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+.progress div {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.progress div::after {
+    content: "";
+    height: 4px;
+    background: #90caf9;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 100%;
+    z-index: -1;
+}
+.progress div:last-child::after {
+    display: none;
+}
+.progress span {
+    background: #0d47a1;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.card h3 {
+    margin-top: 0;
+    color: #0d47a1;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background: #1e88e5;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* BANK LIST */
+.bank-list a {
+    display: block;
+    padding: 8px;
+    margin: 5px 0;
+    background: #e3f2fd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #0d47a1;
+    font-weight: bold;
+}
+
+/* MAP */
+iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+    nav ul {
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <ul>
+        <li><a href="#day1">Day 1</a></li>
+        <li><a href="#day2">Day 2</a></li>
+        <li><a href="#banks">Banks</a></li>
+        <li><a href="#map">Map</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1>Slovenia Student Setup Guide</h1>
+    <p>Simple step-by-step process for new students</p>
+</header>
+
+<div class="container">
+
+<!-- PROGRESS -->
+<div class="progress">
+    <div><span>1</span><p>Enrollment</p></div>
+    <div><span>2</span><p>Tax Number</p></div>
+    <div><span>3</span><p>Bank & Job</p></div>
+</div>
+
+<!-- DAY 1 -->
+<section id="day1">
+<div class="card">
+<h3><i class="fa-solid fa-graduation-cap"></i> Day 1 – University Enrollment</h3>
+<p><b>Address (Maribor):</b> Razlagova ulica 14, 2000 Maribor</p>
+<p>Enroll in your college and collect student certificate.</p>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Razlagova+ulica+14,+Maribor" target="_blank">
+<i class="fa-solid fa-location-arrow"></i> Get Directions
+</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-utensils"></i> Študentski Boni (Student Meals)</h3>
+<p><b>Address:</b> Gosposvetska cesta 83, 2000 Maribor</p>
+<p>Register for student food discounts.</p>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Gosposvetska+cesta+83,+Maribor" target="_blank">
+Get Directions
+</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-bus"></i> Bus Card</h3>
+<p><b>Address:</b> Mlinska ulica 1, 2000 Maribor</p>
+<p>Buy student bus card.</p>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Mlinska+ulica+1,+Maribor" target="_blank">
+Get Directions
+</a>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-house"></i> IMPORTANT – Room Agreement</h3>
+<p>Room agreement is required for:</p>
+<ul>
+<li>Tax number</li>
+<li>Bank account</li>
+<li>Address registration</li>
+</ul>
+<p><b>Arrange this before coming to Slovenia.</b></p>
+</div>
+</section>
+
+<!-- DAY 2 -->
+<section id="day2">
+<div class="card">
+<h3><i class="fa-solid fa-file-invoice"></i> Day 2 – Apply for Tax Number</h3>
+<p><b>Address:</b> Titova cesta 10, 2000 Maribor</p>
+<p>Tax number is mandatory. Processing takes time.</p>
+<a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Titova+cesta+10,+Maribor" target="_blank">
+Get Directions
+</a>
+</div>
+</section>
+
+<!-- BANKS -->
+<section id="banks">
+<div class="card">
+<h3><i class="fa-solid fa-building-columns"></i> Important Banks in Maribor</h3>
+<div class="bank-list">
+<a href="https://maps.google.com/?q=NLB+Maribor" target="_blank">NLB Bank</a>
+<a href="https://maps.google.com/?q=OTP+Bank+Maribor" target="_blank">OTP Bank</a>
+<a href="https://maps.google.com/?q=SKB+Bank+Maribor" target="_blank">SKB Bank</a>
+<a href="https://maps.google.com/?q=Addiko+Bank+Maribor" target="_blank">Addiko Bank</a>
+<a href="https://maps.google.com/?q=UniCredit+Bank+Maribor" target="_blank">UniCredit Bank</a>
+</div>
+<p>Click a bank name to open exact location.</p>
+</div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+<div class="card">
+<h3><i class="fa-solid fa-map"></i> Maribor Student Map</h3>
+<iframe 
+src="https://www.google.com/maps?q=Maribor,Slovenia&output=embed">
+</iframe>
+</div>
+</section>
+
+</div>
+
+</body>
+</html>

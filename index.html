@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Slovenia Student Arrival – 3 Day Checklist</title>
 
+<meta name="description" content="3-day arrival checklist for international students in Slovenia. University enrollment, tax number, bank account, student meals, transport, and jobs.">
+
 <style>
 @media (min-width: 901px) {
   aside.card { position: sticky; top: 18px; height: fit-content; }
@@ -91,14 +93,6 @@ summary::-webkit-details-marker{display:none}
   text-decoration:none;color:var(--text);font-size:13px
 }
 
-details.panel{
-  margin-top:12px;border-radius:18px;
-  border:1px solid var(--border);background:var(--surface2)
-}
-.panelSummary{padding:12px;cursor:pointer;list-style:none}
-.panelBody{padding:0 14px 14px}
-.helpBox{font-size:12.5px;color:var(--muted);padding:10px;border-radius:12px;background:var(--surface3)}
-
 .field{display:grid;gap:6px;margin-top:10px}
 .field label{font-size:12px;color:var(--muted)}
 .field input,.field select{
@@ -121,7 +115,7 @@ footer{
 <header>
   <div class="brand">
     <h1>🇸🇮 Slovenia Student Arrival – 3 Day Checklist</h1>
-    <p>Simple step-by-step guide for international students</p>
+    <p>Made by an international student, for international students</p>
   </div>
   <div class="actions">
     <button class="btn primary" onclick="toggleTheme()">🌗 Theme</button>
@@ -132,12 +126,12 @@ footer{
 
 <div class="grid">
 
-<!-- LEFT SETTINGS -->
+<!-- LEFT PANEL -->
 <aside class="card">
 <h2>⚙️ Settings</h2>
 
 <div class="field">
-<label>City Preset</label>
+<label>City</label>
 <select id="preset" onchange="applyPreset()">
 <option value="maribor">Maribor</option>
 <option value="ljubljana">Ljubljana</option>
@@ -145,23 +139,15 @@ footer{
 </div>
 
 <div class="field">
-<label>Starting Address</label>
+<label>Your Starting Address</label>
 <input id="start" value="Mladinska ulica 7, 2000 Maribor">
 </div>
 
-<details class="panel">
-<summary class="panelSummary">🚨 Emergency</summary>
-<div class="panelBody">
-<div class="helpBox"><b>112</b> Ambulance / Fire<br><b>113</b> Police</div>
-</div>
-</details>
-
-
-  <div>
-  <a class="mapBtn" href="https://goniyo.onelink.me/zKhp/i7aigl2k" target="_blank">
+<div style="margin-top:12px">
+<a class="mapBtn" href="https://goniyo.onelink.me/zKhp/i7aigl2k" target="_blank">
 📱 Free eSIM & Forex Card
 </a>
-  </div>
+</div>
 </aside>
 
 <!-- RIGHT CONTENT -->
@@ -174,46 +160,46 @@ footer{
 </div>
 
 <!-- DAY 1 -->
-<details class="day" >
-<summary><b>DAY 1 – University & City Setup</b><br><span class="tag warn">Important</span></summary>
+<details class="day" open>
+<summary><b>DAY 1 – University & City Setup</b> <span class="tag warn">Important</span></summary>
 <div class="dayBody">
 
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s">
+<input type="checkbox" class="check">
 <div>
 <p class="stepName">University Enrollment</p>
-<p class="stepSub">Get student confirmation</p>
+<p class="stepSub">Passport, Visa, Admission letter</p>
 </div>
 </div>
-<a class="mapBtn" id="uniBtn" target="_blank">Open Map</a>
+<a class="mapBtn" id="uniBtn" target="_blank">Directions</a>
 </div>
 </div>
 
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s">
+<input type="checkbox" class="check">
 <div>
 <p class="stepName">Študentski Boni</p>
-<p class="stepSub">Student meal discounts</p>
+<p class="stepSub">Activate student meal discounts</p>
 </div>
 </div>
-<a class="mapBtn" id="boniBtn" target="_blank">Open Map</a>
+<a class="mapBtn" id="boniBtn" target="_blank">Directions</a>
 </div>
 </div>
 
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s">
+<input type="checkbox" class="check">
 <div>
 <p class="stepName">Bus Card</p>
-<p class="stepSub">Buy / activate public transport card</p>
+<p class="stepSub">Public transport card</p>
 </div>
 </div>
-<a class="mapBtn" id="busBtn" target="_blank">Open Map</a>
+<a class="mapBtn" id="busBtn" target="_blank">Directions</a>
 </div>
 </div>
 
@@ -222,24 +208,30 @@ footer{
 
 <!-- DAY 2 -->
 <details class="day">
-<summary><b>DAY 2 – Tax Number</b><br><span class="tag good">Required</span></summary>
+<summary><b>DAY 2 – Tax Number (FURS)</b> <span class="tag good">Required</span></summary>
 <div class="dayBody">
 <div class="step">
-<input type="checkbox" class="check s">
-<p class="stepName">Apply for Tax Number (FURS)</p>
+<input type="checkbox" class="check">
+Apply for Tax Number (DR-02 form)
+<a class="mapBtn" id="fursBtn" target="_blank">Directions</a>
 </div>
 </div>
 </details>
-<a class="mapBtn" href="https://goniyo.onelink.me/zKhp/i7aigl2k" target="_blank">
-📱 Free eSIM & Forex Card
-</a>
-  
-  <!-- DAY 3 -->
+
+<!-- DAY 3 -->
 <details class="day">
 <summary><b>DAY 3 – Bank & Student Work</b></summary>
 <div class="dayBody">
-<div class="step"><input type="checkbox" class="check s"> Open Bank Account</div>
-<div class="step"><input type="checkbox" class="check s"> Register at Študentski Servis</div>
+<div class="step">
+<input type="checkbox" class="check">
+Open Bank Account
+<a class="mapBtn" id="bankBtn" target="_blank">Directions</a>
+</div>
+<div class="step">
+<input type="checkbox" class="check">
+Register at Študentski Servis
+<a class="mapBtn" id="jobBtn" target="_blank">Directions</a>
+</div>
 </div>
 </details>
 
@@ -247,45 +239,69 @@ footer{
 </div>
 
 <footer>
-<div style="margin-bottom:10px">
-<a href="contact.html" class="mapBtn">📩 Contact</a>
-<a href="privacy.html" class="mapBtn">🔒 Privacy</a>
-<a href="terms.html" class="mapBtn">📜 Terms</a>
-</div>
 <b>Created by Justin Johnson</b>
 </footer>
 
 </div>
 
 <script>
-const checks=[...document.querySelectorAll(".s")];
+const checks=[...document.querySelectorAll(".check")];
+const bar=document.getElementById("bar");
 const pctEl=document.getElementById("pct");
+
+checks.forEach((c,i)=>{
+  c.checked = localStorage.getItem("step"+i)==="1";
+  c.onchange=()=>{
+    localStorage.setItem("step"+i, c.checked?"1":"0");
+    update();
+  };
+});
+
 function update(){
   const done=checks.filter(c=>c.checked).length;
   const pct=Math.round(done/checks.length*100);
-  bar.style.width=pct+"%"; pctEl.innerText=pct+"%";
+  bar.style.width=pct+"%";
+  pctEl.innerText=pct+"%";
 }
-checks.forEach(c=>c.onchange=update);
-function resetAll(){checks.forEach(c=>c.checked=false);update();}
+
+function resetAll(){
+  checks.forEach((c,i)=>{
+    c.checked=false;
+    localStorage.removeItem("step"+i);
+  });
+  update();
+}
+
 function toggleTheme(){
   document.body.dataset.theme =
     document.body.dataset.theme==="light"?"dark":"light";
 }
+
 function applyPreset(){
+  const start=encodeURIComponent(document.getElementById("start").value);
+
   if(preset.value==="maribor"){
-    uniBtn.href="https://maps.google.com/?q=Razlagova+ulica+14,+Maribor";
-    boniBtn.href="https://maps.google.com/?q=Gosposvetska+cesta+83,+Maribor";
-    busBtn.href="https://maps.google.com/?q=Mlinska+ulica+1,+Maribor";
+    uniBtn.href=`https://www.google.com/maps/dir/${start}/Razlagova+ulica+14,+Maribor`;
+    boniBtn.href=`https://www.google.com/maps/dir/${start}/Gosposvetska+cesta+83,+Maribor`;
+    busBtn.href=`https://www.google.com/maps/dir/${start}/Mlinska+ulica+1,+Maribor`;
+    fursBtn.href=`https://www.google.com/maps/dir/${start}/Titova+cesta+10,+Maribor`;
+    bankBtn.href=`https://www.google.com/maps/dir/${start}/OTP+Banka+Maribor`;
+    jobBtn.href=`https://www.google.com/maps/dir/${start}/Študentski+Servis+Maribor`;
   }
+
   if(preset.value==="ljubljana"){
-    uniBtn.href="https://maps.google.com/?q=Kongresni+trg+12,+Ljubljana";
-    boniBtn.href="https://maps.google.com/?q=Dunajska+cesta+20,+Ljubljana";
-    busBtn.href="https://maps.google.com/?q=Slovenska+cesta+56,+Ljubljana";
+    uniBtn.href=`https://www.google.com/maps/dir/${start}/Kongresni+trg+12,+Ljubljana`;
+    boniBtn.href=`https://www.google.com/maps/dir/${start}/Dunajska+cesta+20,+Ljubljana`;
+    busBtn.href=`https://www.google.com/maps/dir/${start}/Slovenska+cesta+56,+Ljubljana`;
+    fursBtn.href=`https://www.google.com/maps/dir/${start}/Šmartinska+cesta+55,+Ljubljana`;
+    bankBtn.href=`https://www.google.com/maps/dir/${start}/OTP+Banka+Ljubljana`;
+    jobBtn.href=`https://www.google.com/maps/dir/${start}/Študentski+Servis+Ljubljana`;
   }
 }
-applyPreset(); update();
+
+applyPreset();
+update();
 </script>
 
 </body>
 </html>
-

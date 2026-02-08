@@ -6,7 +6,7 @@
 <title>Slovenia Student Arrival – 3 Day Checklist</title>
 
 <style>
-  /* RIGHT SIDE SETTINGS STICKY */
+/* STICKY LEFT SETTINGS */
 @media (min-width: 901px) {
   aside.card {
     position: sticky;
@@ -69,9 +69,16 @@ header{
 }
 .btn.primary{background:rgba(77,163,255,.18);border-color:rgba(77,163,255,.4)}
 
-/* GRID */
-.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin-top:14px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+/* GRID – SETTINGS LEFT */
+.grid{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:14px;
+  margin-top:14px
+}
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+}
 
 /* CARDS */
 .card{
@@ -120,7 +127,7 @@ summary::-webkit-details-marker{display:none}
   display:inline-block;margin-top:6px
 }
 
-/* RIGHT PANELS */
+/* PANELS */
 details.panel{
   margin-top:12px;border-radius:18px;
   border:1px solid var(--border);background:var(--surface2)
@@ -166,7 +173,7 @@ footer{
 <header>
   <div class="brand">
     <h1>🇸🇮 Slovenia Student Arrival – 3 Day Checklist</h1>
-    <p>Simple step-by-step guide for all international students in Slovenia.</p>
+    <p>Simple step-by-step guide for international students</p>
   </div>
   <div class="actions">
     <button class="btn primary" onclick="toggleTheme()">🌗 Theme</button>
@@ -177,18 +184,67 @@ footer{
 
 <div class="grid">
 
-<!-- LEFT -->
+<!-- LEFT : SETTINGS -->
+<aside class="card">
+<h2>⚙️ Settings</h2>
+
+<div class="field">
+<label>City Preset</label>
+<select id="preset" onchange="applyPreset()">
+<option value="maribor">Maribor</option>
+<option value="ljubljana">Ljubljana</option>
+</select>
+</div>
+
+<div class="field">
+<label>Starting Address</label>
+<input id="start" value="Mladinska ulica 7, 2000 Maribor">
+</div>
+
+<details class="panel">
+<summary class="panelSummary">
+<div>
+<div class="panelTitle">🛒 Cheapest Shops</div>
+<div class="panelHint">Student friendly</div>
+</div>
+</summary>
+<div class="panelBody">
+<div class="helpBox">
+Hofer, Lidl, Eurospin, DM, Pepco, KIK
+</div>
+</div>
+</details>
+
+<details class="panel">
+<summary class="panelSummary">
+<div>
+<div class="panelTitle">🚨 Emergency</div>
+<div class="panelHint">Slovenia</div>
+</div>
+</summary>
+<div class="panelBody">
+<div class="helpBox">
+<b>112</b> – Ambulance / Fire<br>
+<b>113</b> – Police
+</div>
+</div>
+</details>
+
+</aside>
+
+<!-- RIGHT : MAIN CONTENT -->
 <section class="card">
 <h2>📊 Progress</h2>
+
 <div class="progressBox">
-  <div class="meter"><div id="bar"></div></div>
-  <div class="row"><span>Completed</span><span id="pct">0%</span></div>
+<div class="meter"><div id="bar"></div></div>
+<div class="row"><span>Completed</span><span id="pct">0%</span></div>
 </div>
 
 <details class="day" open>
 <summary>
-  <b>DAY 1 – University & City Setup</b><br>
-  <span class="tag warn">Important</span>
+<b>DAY 1 – University & City Setup</b><br>
+<span class="tag warn">Important</span>
 </summary>
 <div class="dayBody">
 
@@ -210,224 +266,22 @@ footer{
 <div class="stepLeft">
 <input type="checkbox" class="check s">
 <div>
-<p class="stepName">Študentski Boni (Student Meals)</p>
-<p class="stepSub">Register for meal discounts</p>
+<p class="stepName">Študentski Boni</p>
+<p class="stepSub">Student meals</p>
 </div>
 </div>
 <a class="mapBtn" id="boniBtn" target="_blank">Open Map</a>
 </div>
 </div>
 
-<div class="step">
-<div class="stepHead">
-<div class="stepLeft">
-<input type="checkbox" class="check s">
-<div>
-<p class="stepName">Bus Card</p>
-<p class="stepSub">Buy or activate transport card</p>
-</div>
-</div>
-<a class="mapBtn" id="busBtn" target="_blank">Open Map</a>
-</div>
-</div>
-
-<div class="step">
-<p class="stepSub">⚠️ Accommodation contract is required for tax number and bank account.</p>
-</div>
-
 </div>
 </details>
 
-<details class="day">
-<summary>
-  <b>DAY 2 – Tax Number</b><br>
-  <span class="tag good">Required</span>
-</summary>
-<div class="dayBody">
-<div class="step">
-<div class="stepHead">
-<div class="stepLeft">
-<input type="checkbox" class="check s">
-<div>
-<p class="stepName">Apply for Tax Number (FURS)</p>
-<p class="stepSub">Processing takes time</p>
-</div>
-</div>
-<a class="mapBtn" id="fursBtn" target="_blank">Open Map</a>
-</div>
-</div>
-</div>
-</details>
-
-<details class="day">
-<summary>
-  <b>DAY 3 – Bank & Student Work</b>
-</summary>
-<div class="dayBody">
-<div class="step">
-<input type="checkbox" class="check s">
-<p class="stepName">Open Bank Account</p>
-</div>
-
-<div class="step">
-<input type="checkbox" class="check s">
-<p class="stepName">Register at Študentski Servis</p>
-</div>
-</div>
-</details>
-
-  <section class="card" style="margin-top:14px">
-  <h2>📱 eSIM & 💳 Forex Card (Free & Convenient)</h2>
-
-  <p class="muted">
-    New international students often face problems with SIM cards and payments
-    during the first days in Slovenia.
-  </p>
-
-  <div class="step">
-    <p class="stepName">Why this is useful</p>
-    <p class="stepSub">
-      • Get mobile data instantly (no store visit)<br>
-      • Use card payments without heavy international fees<br>
-      • Works before opening a Slovenian bank account
-    </p>
-  </div>
-
-  <div class="step">
-    <p class="stepName">Niyo eSIM & Forex Card</p>
-    <p class="stepSub">
-      This service provides an international eSIM and a forex card.
-      It is easy to use, student-friendly, and convenient for travel.
-    </p>
-  </div>
-
-  <div class="step">
-    <p class="stepSub">
-      ✅ <b>Free to sign up</b><br>
-      ✅ Useful for airport, first week & travel<br>
-      ✅ No need to visit a physical store
-    </p>
-  </div>
-
- 
-
-  <p class="muted" style="margin-top:10px;font-size:12px">
-    Note: This is an optional recommendation based on student experience.
-    Please review the service details before using.
-  </p>
 </section>
 
-
-<!-- RIGHT -->
-<aside class="card">
-<h2>⚙️ Settings</h2>
-
-<div class="field">
-<label>City Preset</label>
-<select id="preset" onchange="applyPreset()">
-<option value="maribor">Maribor</option>
-<option value="ljubljana">Ljubljana</option>
-</select>
-</div>
-
-<div class="field">
-<label>Starting Address</label>
-<input id="start" value="Mladinska ulica 7, 2000 Maribor">
-</div>
-
-<!-- Cheapest Shops -->
-<details class="panel">
-<summary class="panelSummary">
-<div>
-<div class="panelTitle">🛒 Cheapest Shops</div>
-<div class="panelHint">Best for student savings</div>
-</div>
-</summary>
-<div class="panelBody">
-<div class="helpBox">
-Best affordable stores: Hofer, Lidl, Eurospin, DM, Pepco, KIK.
-</div>
-<div class="chipRow">
-<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Hofer+near+Maribor">Hofer</a>
-<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Lidl+near+Maribor">Lidl</a>
-<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Eurospin+near+Maribor">Eurospin</a>
-<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/dm+drogerie+markt+near+Maribor">DM</a>
-<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Pepco+near+Maribor">Pepco</a>
-<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/KIK+near+Maribor">KIK</a>
-</div>
-</div>
-</details>
-
-<!-- Budget -->
-<details class="panel">
-<summary class="panelSummary">
-<div>
-<div class="panelTitle">💶 Student Budget (Monthly)</div>
-<div class="panelHint">Simple estimate</div>
-</div>
-</summary>
-<div class="panelBody">
-<div class="helpBox">
-Rent €250–450<br>
-Food €150–250<br>
-Transport €20–50<br>
-Mobile €10–20<br>
-Personal €30–80<br><br>
-<b>Total: €500–900</b>
-</div>
-</div>
-</details>
-
-<!-- Emergency -->
-<details class="panel">
-<summary class="panelSummary">
-<div>
-<div class="panelTitle">🚨 Emergency Numbers</div>
-<div class="panelHint">Slovenia</div>
-</div>
-</summary>
-<div class="panelBody">
-<div class="helpBox">
-<b>112</b> – Ambulance / Fire<br>
-<b>113</b> – Police
-</div>
-</div>
-</details>
-<a
-  href="https://goniyo.onelink.me/zKhp/i7aigl2k"
-  target="_blank"
-  rel="noopener"
-  class="mapBtn"
-  style="margin-top:10px"
->
-  📱 Free eSIM & Forex Card
-</a>
-
-<!-- Hospital & Pharmacy -->
-<details class="panel">
-<summary class="panelSummary">
-<div>
-<div class="panelTitle">🏥 Hospital / Pharmacy</div>
-<div class="panelHint">Near your address</div>
-</div>
-</summary>
-<div class="panelBody">
-<div class="chipRow">
-<a class="mapBtn" id="btnHosp" target="_blank">Hospitals</a>
-<a class="mapBtn" id="btnPharm" target="_blank">Pharmacies</a>
-</div>
-</div>
-</details>
-
-</aside>
 </div>
 
 <footer>
-<div style="margin-bottom:10px">
-<a href="contact.html" class="mapBtn">📩 Contact</a>
-<a href="privacy.html" class="mapBtn">🔒 Privacy</a>
-<a href="terms.html" class="mapBtn">📜 Terms</a>
-</div>
 <b>Created by Justin Johnson</b>
 </footer>
 
@@ -435,20 +289,16 @@ Personal €30–80<br><br>
 
 <script>
 const checks=[...document.querySelectorAll(".s")];
+const pctEl=document.getElementById("pct");
 function update(){
 const done=checks.filter(c=>c.checked).length;
 const pct=Math.round(done/checks.length*100);
 bar.style.width=pct+"%";
 pctEl.innerText=pct+"%";
 }
-const pctEl=document.getElementById("pct");
 checks.forEach(c=>c.onchange=update);
 
-function resetAll(){
-checks.forEach(c=>c.checked=false);
-update();
-}
-
+function resetAll(){checks.forEach(c=>c.checked=false);update();}
 function toggleTheme(){
 document.body.dataset.theme=
 document.body.dataset.theme==="light"?"dark":"light";
@@ -458,29 +308,13 @@ function applyPreset(){
 if(preset.value==="maribor"){
 uniBtn.href="https://maps.google.com/?q=Razlagova+ulica+14,+Maribor";
 boniBtn.href="https://maps.google.com/?q=Gosposvetska+cesta+83,+Maribor";
-busBtn.href="https://maps.google.com/?q=Mlinska+ulica+1,+Maribor";
-fursBtn.href="https://maps.google.com/?q=Titova+cesta+10,+Maribor";
 }
 if(preset.value==="ljubljana"){
 uniBtn.href="https://maps.google.com/?q=Kongresni+trg+12,+Ljubljana";
 boniBtn.href="https://maps.google.com/?q=Dunajska+cesta+20,+Ljubljana";
-busBtn.href="https://maps.google.com/?q=Slovenska+cesta+56,+Ljubljana";
-fursBtn.href="https://maps.google.com/?q=Šmartinska+cesta+55,+Ljubljana";
 }
-updateNearby();
 }
-
-function updateNearby(){
-const start=startInput.value;
-btnHosp.href=`https://www.google.com/maps/search/hospital+near+${encodeURIComponent(start)}`;
-btnPharm.href=`https://www.google.com/maps/search/pharmacy+near+${encodeURIComponent(start)}`;
-}
-
-const startInput=document.getElementById("start");
-startInput.addEventListener("input",updateNearby);
-
 applyPreset();
-updateNearby();
 update();
 </script>
 

@@ -106,10 +106,28 @@ summary::-webkit-details-marker{display:none}
   padding:9px 12px;border-radius:12px;
   background:rgba(77,163,255,.18);
   border:1px solid rgba(77,163,255,.4);
-  text-decoration:none;color:var(--text);font-size:13px
+  text-decoration:none;color:var(--text);font-size:13px;
+  display:inline-block;margin-top:6px
 }
 
-/* RIGHT */
+/* RIGHT PANELS */
+details.panel{
+  margin-top:12px;border-radius:18px;
+  border:1px solid var(--border);background:var(--surface2)
+}
+.panelSummary{padding:12px;cursor:pointer;list-style:none}
+.panelSummary::-webkit-details-marker{display:none}
+.panelTitle{font-weight:700;font-size:13.5px}
+.panelHint{font-size:12px;color:var(--muted)}
+.panelBody{padding:0 14px 14px}
+
+.helpBox{
+  font-size:12.5px;color:var(--muted);
+  padding:10px;border-radius:12px;
+  background:var(--surface3)
+}
+.chipRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
 .field{display:grid;gap:6px;margin-top:10px}
 .field label{font-size:12px;color:var(--muted)}
 .field input,.field select{
@@ -117,11 +135,17 @@ summary::-webkit-details-marker{display:none}
   border:1px solid var(--border);
   background:var(--surface2);color:var(--text)
 }
-.bank a{display:block;margin-top:6px}
 
 footer{
-  text-align:center;margin-top:20px;
-  font-size:12px;color:var(--muted)
+  margin-top:24px;
+  padding:16px;
+  text-align:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  font-size:12.5px;
+  color:var(--muted);
 }
 </style>
 </head>
@@ -164,7 +188,7 @@ footer{
 <input type="checkbox" class="check s">
 <div>
 <p class="stepName">University Enrollment</p>
-<p class="stepSub">Get student confirmation letter</p>
+<p class="stepSub">Get student confirmation</p>
 </div>
 </div>
 <a class="mapBtn" id="uniBtn" target="_blank">Open Map</a>
@@ -177,7 +201,7 @@ footer{
 <input type="checkbox" class="check s">
 <div>
 <p class="stepName">Študentski Boni (Student Meals)</p>
-<p class="stepSub">Register for discounted meals</p>
+<p class="stepSub">Register for meal discounts</p>
 </div>
 </div>
 <a class="mapBtn" id="boniBtn" target="_blank">Open Map</a>
@@ -198,10 +222,7 @@ footer{
 </div>
 
 <div class="step">
-<p class="stepSub">
-⚠️ Accommodation contract is required for tax number and bank account.
-Arrange this before arrival.
-</p>
+<p class="stepSub">⚠️ Accommodation contract is required for tax number and bank account.</p>
 </div>
 
 </div>
@@ -219,7 +240,7 @@ Arrange this before arrival.
 <input type="checkbox" class="check s">
 <div>
 <p class="stepName">Apply for Tax Number (FURS)</p>
-<p class="stepSub">Processing takes days or weeks</p>
+<p class="stepSub">Processing takes time</p>
 </div>
 </div>
 <a class="mapBtn" id="fursBtn" target="_blank">Open Map</a>
@@ -236,13 +257,11 @@ Arrange this before arrival.
 <div class="step">
 <input type="checkbox" class="check s">
 <p class="stepName">Open Bank Account</p>
-<p class="stepSub">After receiving tax number</p>
 </div>
 
 <div class="step">
 <input type="checkbox" class="check s">
 <p class="stepName">Register at Študentski Servis</p>
-<p class="stepSub">For legal student jobs</p>
 </div>
 </div>
 </details>
@@ -266,48 +285,92 @@ Arrange this before arrival.
 <input id="start" value="Mladinska ulica 7, 2000 Maribor">
 </div>
 
-<h2 style="margin-top:14px">🏦 Banks in Slovenia</h2>
-<div class="bank">
-<a class="mapBtn" href="https://maps.google.com/?q=NLB+Slovenia" target="_blank">NLB Bank</a>
-<a class="mapBtn" href="https://maps.google.com/?q=OTP+Bank+Slovenia" target="_blank">OTP Bank</a>
-<a class="mapBtn" href="https://maps.google.com/?q=Addiko+Bank+Slovenia" target="_blank">Addiko Bank</a>
-<a class="mapBtn" href="https://maps.google.com/?q=UniCredit+Bank+Slovenia" target="_blank">UniCredit Bank</a>
-<a class="mapBtn" href="https://maps.google.com/?q=SKB+Bank+Slovenia" target="_blank">SKB Bank</a>
+<!-- Cheapest Shops -->
+<details class="panel">
+<summary class="panelSummary">
+<div>
+<div class="panelTitle">🛒 Cheapest Shops</div>
+<div class="panelHint">Best for student savings</div>
 </div>
+</summary>
+<div class="panelBody">
+<div class="helpBox">
+Best affordable stores: Hofer, Lidl, Eurospin, DM, Pepco, KIK.
+</div>
+<div class="chipRow">
+<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Hofer+near+Maribor">Hofer</a>
+<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Lidl+near+Maribor">Lidl</a>
+<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Eurospin+near+Maribor">Eurospin</a>
+<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/dm+drogerie+markt+near+Maribor">DM</a>
+<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/Pepco+near+Maribor">Pepco</a>
+<a class="mapBtn" target="_blank" href="https://www.google.com/maps/search/KIK+near+Maribor">KIK</a>
+</div>
+</div>
+</details>
+
+<!-- Budget -->
+<details class="panel">
+<summary class="panelSummary">
+<div>
+<div class="panelTitle">💶 Student Budget (Monthly)</div>
+<div class="panelHint">Simple estimate</div>
+</div>
+</summary>
+<div class="panelBody">
+<div class="helpBox">
+Rent €250–450<br>
+Food €150–250<br>
+Transport €20–50<br>
+Mobile €10–20<br>
+Personal €30–80<br><br>
+<b>Total: €500–900</b>
+</div>
+</div>
+</details>
+
+<!-- Emergency -->
+<details class="panel">
+<summary class="panelSummary">
+<div>
+<div class="panelTitle">🚨 Emergency Numbers</div>
+<div class="panelHint">Slovenia</div>
+</div>
+</summary>
+<div class="panelBody">
+<div class="helpBox">
+<b>112</b> – Ambulance / Fire<br>
+<b>113</b> – Police
+</div>
+</div>
+</details>
+
+<!-- Hospital & Pharmacy -->
+<details class="panel">
+<summary class="panelSummary">
+<div>
+<div class="panelTitle">🏥 Hospital / Pharmacy</div>
+<div class="panelHint">Near your address</div>
+</div>
+</summary>
+<div class="panelBody">
+<div class="chipRow">
+<a class="mapBtn" id="btnHosp" target="_blank">Hospitals</a>
+<a class="mapBtn" id="btnPharm" target="_blank">Pharmacies</a>
+</div>
+</div>
+</details>
+
 </aside>
-
 </div>
 
-
-  
-
-<footer style="
-  margin-top:20px;
-  padding:16px;
-  text-align:center;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  font-size:12.5px;
-  color:var(--muted);
-">
-
-  <div style="margin-bottom:10px">
-    <a href="contact.html" class="mapBtn">📩 Contact</a>
-    <a href="privacy.html" class="mapBtn">🔒 Privacy Policy</a>
-    <a href="terms.html" class="mapBtn">📜 Terms & Conditions</a>
-  </div>
-
-  <div>
-    Built for international students in Slovenia 🇸🇮<br>
-    <b>Created by Justin Johnson</b>
-  </div>
-
+<footer>
+<div style="margin-bottom:10px">
+<a href="contact.html" class="mapBtn">📩 Contact</a>
+<a href="privacy.html" class="mapBtn">🔒 Privacy</a>
+<a href="terms.html" class="mapBtn">📜 Terms</a>
+</div>
+<b>Created by Justin Johnson</b>
 </footer>
-
-
-
 
 </div>
 
@@ -316,14 +379,13 @@ const checks=[...document.querySelectorAll(".s")];
 function update(){
 const done=checks.filter(c=>c.checked).length;
 const pct=Math.round(done/checks.length*100);
-document.getElementById("pct").innerText=pct+"%";
-document.getElementById("bar").style.width=pct+"%";
-localStorage.setItem("checks",JSON.stringify(checks.map(c=>c.checked)));
+bar.style.width=pct+"%";
+pctEl.innerText=pct+"%";
 }
+const pctEl=document.getElementById("pct");
 checks.forEach(c=>c.onchange=update);
 
 function resetAll(){
-localStorage.clear();
 checks.forEach(c=>c.checked=false);
 update();
 }
@@ -346,8 +408,20 @@ boniBtn.href="https://maps.google.com/?q=Dunajska+cesta+20,+Ljubljana";
 busBtn.href="https://maps.google.com/?q=Slovenska+cesta+56,+Ljubljana";
 fursBtn.href="https://maps.google.com/?q=Šmartinska+cesta+55,+Ljubljana";
 }
+updateNearby();
 }
+
+function updateNearby(){
+const start=startInput.value;
+btnHosp.href=`https://www.google.com/maps/search/hospital+near+${encodeURIComponent(start)}`;
+btnPharm.href=`https://www.google.com/maps/search/pharmacy+near+${encodeURIComponent(start)}`;
+}
+
+const startInput=document.getElementById("start");
+startInput.addEventListener("input",updateNearby);
+
 applyPreset();
+updateNearby();
 update();
 </script>
 

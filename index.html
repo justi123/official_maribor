@@ -11,6 +11,54 @@
 @media (min-width: 901px) {
   aside.card { position: sticky; top: 18px; height: fit-content; }
 }
+/* Gumroad Promo */
+.gumroadPromo{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:16px;
+  padding:18px;
+  border-radius:20px;
+  background:linear-gradient(135deg, rgba(77,163,255,.18), rgba(34,197,94,.12));
+  border:1px solid var(--border);
+  box-shadow:var(--shadow)
+}
+@media(max-width:800px){
+  .gumroadPromo{grid-template-columns:1fr}
+}
+
+.gumroadImg img{
+  width:100%;
+  border-radius:14px;
+  border:1px solid var(--border);
+}
+
+.gumroadContent h3{
+  margin:0 0 6px;
+  font-size:17px;
+}
+
+.gumroadList{
+  margin:10px 0;
+  padding-left:18px;
+  font-size:13.5px;
+  color:var(--text)
+}
+.gumroadList li{margin-bottom:6px}
+
+.buyBtn{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 18px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ff7a18,#ffb347);
+  color:#1a1200;
+  font-weight:700;
+  text-decoration:none;
+  border:0;
+  box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+.buyBtn:hover{transform:translateY(-1px)}
 
 :root{
   --bg:#070b14; --text:#eaf2ff; --muted:#9fb0cf;
@@ -237,7 +285,40 @@ Register at Študentski Servis
 
 </section>
 </div>
+<!-- GUMROAD DOCUMENT PROMO -->
+<div class="gumroadPromo">
 
+  <div class="gumroadImg">
+    <img src="ChatGPT Image Feb 1, 2026 at 10_44_09 PM.png" 
+         alt="Slovenia Student Pre-Arrival Checklist PDF">
+  </div>
+
+  <div class="gumroadContent">
+    <h3>📘 Slovenia Student Pre-Arrival Checklist (PDF)</h3>
+    <p class="muted">
+      Moving to Slovenia? Don’t guess.  
+      This checklist is made by a student who already did everything.
+    </p>
+
+    <ul class="gumroadList">
+      <li>✅ Winter + Summer packing list</li>
+      <li>✅ Avoid overweight luggage & extra fees</li>
+      <li>✅ Documents you’ll ACTUALLY need</li>
+      <li>✅ Saves time, money & stress after landing</li>
+    </ul>
+
+    <a class="buyBtn"
+       href="https://justihere.gumroad.com/l/slovenia"
+       target="_blank">
+      🛒 Buy & Download PDF (Instant)
+    </a>
+
+    <p class="muted" style="margin-top:8px;font-size:12px">
+      One-time purchase • Instant access • Student-friendly
+    </p>
+  </div>
+
+</div>
 <footer> <div style="margin-bottom:10px"> <a href="contact.html" class="mapBtn">📩 Contact</a> <a href="privacy.html" class="mapBtn">🔒 Privacy</a> <a href="terms.html" class="mapBtn">📜 Terms</a> </div> <b>Created by Justin Johnson</b> </footer>
 
 </div>

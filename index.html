@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Slovenia Student Arrival – 3 Day Checklist</title>
 
 <style>
-/* ===== THEME ===== */
 :root{
   --bg:#070b14;
   --text:#eaf2ff;
   --muted:#9fb0cf;
-  --border:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,.12);
   --accent:#4da3ff;
   --good:#22c55e;
   --warn:#ffcc66;
   --surface:rgba(15,23,42,.9);
   --surface2:rgba(255,255,255,.04);
   --surface3:rgba(11,19,36,.6);
-  --shadow:0 16px 60px rgba(0,0,0,.45);
+  --shadow:0 16px 50px rgba(0,0,0,.45);
 }
+
 body[data-theme="light"]{
   --bg:#f6f8ff;
   --text:#0a1020;
@@ -28,7 +28,7 @@ body[data-theme="light"]{
   --surface:rgba(255,255,255,.95);
   --surface2:rgba(10,16,32,.04);
   --surface3:rgba(10,16,32,.05);
-  --shadow:0 16px 45px rgba(0,0,0,.1);
+  --shadow:0 16px 40px rgba(0,0,0,.1);
 }
 
 *{box-sizing:border-box}
@@ -38,9 +38,10 @@ body{
   background:var(--bg);
   color:var(--text);
 }
+
 .wrap{max-width:1200px;margin:auto;padding:18px 12px 50px}
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   padding:16px;border-radius:18px;
@@ -48,7 +49,7 @@ header{
   box-shadow:var(--shadow)
 }
 .brand h1{margin:0;font-size:18px}
-.brand p{margin:6px 0 0;color:var(--muted);font-size:13px;max-width:820px}
+.brand p{margin:6px 0 0;color:var(--muted);font-size:13px}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
 .btn{
   padding:9px 12px;border-radius:12px;
@@ -58,35 +59,44 @@ header{
 }
 .btn.primary{background:rgba(77,163,255,.18);border-color:rgba(77,163,255,.4)}
 
-/* ===== GRID ===== */
+/* GRID */
 .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin-top:14px}
 @media(max-width:900px){.grid{grid-template-columns:1fr}}
 
-/* ===== CARDS ===== */
+/* CARDS */
 .card{
   background:var(--surface);border:1px solid var(--border);
   border-radius:18px;padding:15px;box-shadow:var(--shadow)
 }
 .card h2{margin:0 0 10px;font-size:15px}
-.muted{color:var(--muted);font-size:13px}
+.muted{color:var(--muted);font-size:13px;line-height:1.5}
 
-/* ===== PROGRESS ===== */
+/* PROGRESS */
 .progressBox{margin-top:12px;padding:12px;border-radius:16px;background:var(--surface2)}
 .meter{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
 .meter div{height:100%;width:0;background:var(--accent)}
 .row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
 
-/* ===== DAYS ===== */
-details.day{margin-top:12px;border-radius:18px;border:1px solid var(--border);background:var(--surface2)}
+/* DAYS */
+details.day{
+  margin-top:12px;border-radius:18px;
+  border:1px solid var(--border);background:var(--surface2)
+}
 summary{list-style:none;cursor:pointer;padding:14px}
 summary::-webkit-details-marker{display:none}
-.tag{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--border)}
+.tag{
+  font-size:12px;padding:5px 10px;border-radius:999px;
+  border:1px solid var(--border);display:inline-block;margin-top:4px
+}
 .tag.warn{color:var(--warn)}
 .tag.good{color:var(--good)}
 .dayBody{padding:0 14px 14px}
 
-/* ===== STEPS ===== */
-.step{margin-top:10px;padding:12px;border-radius:16px;background:var(--surface3);border:1px solid var(--border)}
+/* STEPS */
+.step{
+  margin-top:10px;padding:12px;border-radius:16px;
+  background:var(--surface3);border:1px solid var(--border)
+}
 .stepHead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .stepLeft{display:flex;gap:10px}
 .check{margin-top:4px}
@@ -99,7 +109,7 @@ summary::-webkit-details-marker{display:none}
   text-decoration:none;color:var(--text);font-size:13px
 }
 
-/* ===== RIGHT PANELS ===== */
+/* RIGHT */
 .field{display:grid;gap:6px;margin-top:10px}
 .field label{font-size:12px;color:var(--muted)}
 .field input,.field select{
@@ -109,7 +119,10 @@ summary::-webkit-details-marker{display:none}
 }
 .bank a{display:block;margin-top:6px}
 
-footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
+footer{
+  text-align:center;margin-top:20px;
+  font-size:12px;color:var(--muted)
+}
 </style>
 </head>
 
@@ -119,7 +132,7 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 <header>
   <div class="brand">
     <h1>🇸🇮 Slovenia Student Arrival – 3 Day Checklist</h1>
-    <p>Simple steps, correct order, real locations. For all international students.</p>
+    <p>Simple step-by-step guide for all international students in Slovenia.</p>
   </div>
   <div class="actions">
     <button class="btn primary" onclick="toggleTheme()">🌗 Theme</button>
@@ -138,10 +151,9 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
   <div class="row"><span>Completed</span><span id="pct">0%</span></div>
 </div>
 
-<!-- DAY 1 -->
 <details class="day" open>
 <summary>
-  <b>DAY 1 – University & City Setup</b><br/>
+  <b>DAY 1 – University & City Setup</b><br>
   <span class="tag warn">Important</span>
 </summary>
 <div class="dayBody">
@@ -149,10 +161,10 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s"/>
+<input type="checkbox" class="check s">
 <div>
 <p class="stepName">University Enrollment</p>
-<p class="stepSub">Get student confirmation</p>
+<p class="stepSub">Get student confirmation letter</p>
 </div>
 </div>
 <a class="mapBtn" id="uniBtn" target="_blank">Open Map</a>
@@ -162,10 +174,10 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s"/>
+<input type="checkbox" class="check s">
 <div>
 <p class="stepName">Študentski Boni (Student Meals)</p>
-<p class="stepSub">Register for meal discounts</p>
+<p class="stepSub">Register for discounted meals</p>
 </div>
 </div>
 <a class="mapBtn" id="boniBtn" target="_blank">Open Map</a>
@@ -175,7 +187,7 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s"/>
+<input type="checkbox" class="check s">
 <div>
 <p class="stepName">Bus Card</p>
 <p class="stepSub">Buy or activate transport card</p>
@@ -186,26 +198,28 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 </div>
 
 <div class="step">
-<p class="stepSub">⚠️ Room contract is required for tax number & bank. Arrange before arrival.</p>
+<p class="stepSub">
+⚠️ Accommodation contract is required for tax number and bank account.
+Arrange this before arrival.
+</p>
 </div>
 
 </div>
 </details>
 
-<!-- DAY 2 -->
 <details class="day">
 <summary>
-  <b>DAY 2 – Tax Number</b><br/>
+  <b>DAY 2 – Tax Number</b><br>
   <span class="tag good">Required</span>
 </summary>
 <div class="dayBody">
 <div class="step">
 <div class="stepHead">
 <div class="stepLeft">
-<input type="checkbox" class="check s"/>
+<input type="checkbox" class="check s">
 <div>
 <p class="stepName">Apply for Tax Number (FURS)</p>
-<p class="stepSub">Processing takes time</p>
+<p class="stepSub">Processing takes days or weeks</p>
 </div>
 </div>
 <a class="mapBtn" id="fursBtn" target="_blank">Open Map</a>
@@ -214,25 +228,22 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 </div>
 </details>
 
-<!-- DAY 3 -->
 <details class="day">
 <summary>
   <b>DAY 3 – Bank & Student Work</b>
 </summary>
 <div class="dayBody">
-
 <div class="step">
-<input type="checkbox" class="check s"/>
+<input type="checkbox" class="check s">
 <p class="stepName">Open Bank Account</p>
-<p class="stepSub">After tax number</p>
+<p class="stepSub">After receiving tax number</p>
 </div>
 
 <div class="step">
-<input type="checkbox" class="check s"/>
+<input type="checkbox" class="check s">
 <p class="stepName">Register at Študentski Servis</p>
 <p class="stepSub">For legal student jobs</p>
 </div>
-
 </div>
 </details>
 
@@ -252,23 +263,63 @@ footer{text-align:center;margin-top:14px;font-size:12px;color:var(--muted)}
 
 <div class="field">
 <label>Starting Address</label>
-<input id="start" value="Mladinska ulica 7, 2000 Maribor"/>
+<input id="start" value="Mladinska ulica 7, 2000 Maribor">
 </div>
 
-<h2 style="margin-top:14px">🏦 Banks</h2>
+<h2 style="margin-top:14px">🏦 Banks in Slovenia</h2>
 <div class="bank">
-<a class="mapBtn" href="https://maps.google.com/?q=NLB+Slovenia" target="_blank">NLB</a>
-<a class="mapBtn" href="https://maps.google.com/?q=OTP+Bank+Slovenia" target="_blank">OTP</a>
-<a class="mapBtn" href="https://maps.google.com/?q=Addiko+Bank+Slovenia" target="_blank">Addiko</a>
-<a class="mapBtn" href="https://maps.google.com/?q=UniCredit+Bank+Slovenia" target="_blank">UniCredit</a>
-<a class="mapBtn" href="https://maps.google.com/?q=SKB+Bank+Slovenia" target="_blank">SKB</a>
+<a class="mapBtn" href="https://maps.google.com/?q=NLB+Slovenia" target="_blank">NLB Bank</a>
+<a class="mapBtn" href="https://maps.google.com/?q=OTP+Bank+Slovenia" target="_blank">OTP Bank</a>
+<a class="mapBtn" href="https://maps.google.com/?q=Addiko+Bank+Slovenia" target="_blank">Addiko Bank</a>
+<a class="mapBtn" href="https://maps.google.com/?q=UniCredit+Bank+Slovenia" target="_blank">UniCredit Bank</a>
+<a class="mapBtn" href="https://maps.google.com/?q=SKB+Bank+Slovenia" target="_blank">SKB Bank</a>
+</div>
+</aside>
+
 </div>
 
-</aside>
-</div>
+<!-- CONTACT -->
+<section class="card" id="contact" style="margin-top:14px">
+<h2>📩 Contact</h2>
+<p class="muted">
+This website is created to help international students in Slovenia.
+If you find an error or want to suggest an improvement, contact:
+</p>
+<p class="muted">
+📧 Email: your-email@example.com<br>
+🌐 GitHub: github.com/yourusername
+</p>
+</section>
+
+<!-- PRIVACY -->
+<section class="card" id="privacy" style="margin-top:14px">
+<h2>🔒 Privacy Policy</h2>
+<p class="muted">
+This website does not collect personal data.
+All checklist data is saved only in your browser using localStorage.
+</p>
+<p class="muted">
+We do not use cookies or tracking tools.
+Google Maps links follow Google’s own privacy policy.
+</p>
+</section>
+
+<!-- TERMS -->
+<section class="card" id="terms" style="margin-top:14px">
+<h2>📜 Terms & Conditions</h2>
+<p class="muted">
+This website is for informational purposes only.
+Rules may change based on city, university, or government offices.
+Always verify with official authorities.
+</p>
+<p class="muted">
+Use this website at your own responsibility.
+</p>
+</section>
 
 <footer>
-Built for all international students in Slovenia 🇸🇮
+Built for international students in Slovenia 🇸🇮<br>
+<b>Created by Justin Johnson</b>
 </footer>
 
 </div>
@@ -296,14 +347,13 @@ document.body.dataset.theme==="light"?"dark":"light";
 }
 
 function applyPreset(){
-const p=document.getElementById("preset").value;
-if(p==="maribor"){
+if(preset.value==="maribor"){
 uniBtn.href="https://maps.google.com/?q=Razlagova+ulica+14,+Maribor";
 boniBtn.href="https://maps.google.com/?q=Gosposvetska+cesta+83,+Maribor";
 busBtn.href="https://maps.google.com/?q=Mlinska+ulica+1,+Maribor";
 fursBtn.href="https://maps.google.com/?q=Titova+cesta+10,+Maribor";
 }
-if(p==="ljubljana"){
+if(preset.value==="ljubljana"){
 uniBtn.href="https://maps.google.com/?q=Kongresni+trg+12,+Ljubljana";
 boniBtn.href="https://maps.google.com/?q=Dunajska+cesta+20,+Ljubljana";
 busBtn.href="https://maps.google.com/?q=Slovenska+cesta+56,+Ljubljana";

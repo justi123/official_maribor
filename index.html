@@ -155,6 +155,60 @@ footer{
   font-size:12.5px;color:var(--muted)
 }
 </style>
+  /* ===== PRO UI ENHANCEMENTS (NON-DESTRUCTIVE) ===== */
+
+/* Smooth appearance */
+.card, .step, details.day, .gumroadPromo {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.card:hover,
+.gumroadPromo:hover {
+  transform: translateY(-2px);
+}
+
+/* Steps hover clarity */
+.step:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(77,163,255,.10),
+    rgba(255,255,255,.03)
+  );
+}
+
+/* Better checkbox UX */
+.check {
+  width:18px;
+  height:18px;
+  accent-color: var(--accent);
+  cursor:pointer;
+}
+
+/* Details open animation */
+details.day[open] {
+  animation: openDay .35s ease;
+}
+@keyframes openDay {
+  from {opacity:0; transform:translateY(-6px)}
+  to {opacity:1; transform:none}
+}
+
+/* Sticky right card polish */
+aside.card {
+  backdrop-filter: blur(14px);
+}
+
+/* Mobile tap comfort */
+@media(max-width:600px){
+  .step {padding:14px}
+  .mapBtn {padding:11px 14px}
+}
+
+/* Subtle glow on progress */
+.meter div {
+  box-shadow: 0 0 18px rgba(77,163,255,.6);
+}
+
 </head>
 
 <body>
@@ -205,6 +259,7 @@ footer{
 <div class="progressBox">
   <div class="meter"><div id="bar"></div></div>
   <div class="row"><span>Completed</span><span id="pct">0%</span></div>
+  <p class="muted" id="progressMsg" style="margin-top:8px;font-size:13px"></p>
 </div>
 
 <!-- DAY 1 -->
@@ -369,6 +424,61 @@ Register at Študentski Servis
 </div>
 
 <script>
+
+  /* ===== PRO FEATURES ADD-ON ===== */
+
+// Motivational progress text
+const msg=document.getElementById("progressMsg");
+
+function updateMessage(pct){
+  if(pct===0) msg.innerText="Let’s start — Day 1 changes everything 🚀";
+  else if(pct<40) msg.innerText="Good start. Keep going 💪";
+  else if(pct<70) msg.innerText="You’re doing great — almost there 🔥";
+  else if(pct<100) msg.innerText="So close! Finish strong 🏁";
+  else msg.innerText="🎉 Arrival checklist completed. Welcome to Slovenia!";
+}
+
+// Extend existing update()
+const oldUpdate=update;
+update=function(){
+  oldUpdate();
+  const pct=parseInt(pctEl.innerText);
+  updateMessage(pct);
+};
+updateMessage(0);
+
+// Auto-open first incomplete day
+document.querySelectorAll("details.day").forEach(day=>{
+  const unchecked = day.querySelector(".check:not(:checked)");
+  if(unchecked && !document.querySelector("details.day[open]")){
+    day.open=true;
+  }
+});
+
+// EXPORT / IMPORT BACKUP (PRO FEATURE)
+function exportProgress(){
+  const data={};
+  checks.forEach((c,i)=>data["step"+i]=c.checked);
+  navigator.clipboard.writeText(JSON.stringify(data));
+  alert("Progress copied to clipboard ✅");
+}
+
+function importProgress(){
+  const raw=prompt("Paste your backup data:");
+  if(!raw) return;
+  try{
+    const data=JSON.parse(raw);
+    checks.forEach((c,i)=>{
+      c.checked=!!data["step"+i];
+      localStorage.setItem("step"+i,c.checked?"1":"0");
+    });
+    update();
+    alert("Progress restored 🎉");
+  }catch{
+    alert("Invalid backup data ❌");
+  }
+}
+
 const checks=[...document.querySelectorAll(".check")];
 const bar=document.getElementById("bar");
 const pctEl=document.getElementById("pct");
